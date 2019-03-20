@@ -14,6 +14,15 @@
 		3A8AADD31DF9B85E00A2B931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */; };
 		3A8AADDE1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADDD1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift */; };
 		3A8AADE91DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */; };
+		F33E50052240E4AB0078DF0E /* ParkArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E50042240E4AB0078DF0E /* ParkArea.swift */; };
+		F33E50072240E65F0078DF0E /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E50062240E65F0078DF0E /* RideAccess.swift */; };
+		F33E50092240E9020078DF0E /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E50082240E9020078DF0E /* Discount.swift */; };
+		F33E500D2240EB4F0078DF0E /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E500C2240EB4F0078DF0E /* Entrant.swift */; };
+		F33E500F2240EB780078DF0E /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E500E2240EB780078DF0E /* Pass.swift */; };
+		F33E50112240ED950078DF0E /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E50102240ED950078DF0E /* Guest.swift */; };
+		F33E50132240EF0C0078DF0E /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E50122240EF0C0078DF0E /* Employee.swift */; };
+		F33E5015224113480078DF0E /* PassGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E5014224113480078DF0E /* PassGenerator.swift */; };
+		F33E501722412B030078DF0E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E501622412B030078DF0E /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,15 @@
 		3A8AADE41DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewAppSwiftTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewAppSwiftTemplateUITests.swift; sourceTree = "<group>"; };
 		3A8AADEA1DF9B85E00A2B931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F33E50042240E4AB0078DF0E /* ParkArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkArea.swift; sourceTree = "<group>"; };
+		F33E50062240E65F0078DF0E /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
+		F33E50082240E9020078DF0E /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		F33E500C2240EB4F0078DF0E /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
+		F33E500E2240EB780078DF0E /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
+		F33E50102240ED950078DF0E /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		F33E50122240EF0C0078DF0E /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		F33E5014224113480078DF0E /* PassGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassGenerator.swift; sourceTree = "<group>"; };
+		F33E501622412B030078DF0E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +115,9 @@
 		3A8AADC71DF9B85E00A2B931 /* SingleViewAppSwiftTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				3A8AADC81DF9B85E00A2B931 /* AppDelegate.swift */,
-				3A8AADCA1DF9B85E00A2B931 /* ViewController.swift */,
-				3A8AADCC1DF9B85E00A2B931 /* Main.storyboard */,
-				3A8AADCF1DF9B85E00A2B931 /* Assets.xcassets */,
+				F33E50022240E4220078DF0E /* Model */,
+				F33E50012240E4160078DF0E /* Controller */,
+				F33E50032240E4290078DF0E /* View */,
 				3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */,
 				3A8AADD41DF9B85E00A2B931 /* Info.plist */,
 			);
@@ -123,6 +140,40 @@
 				3A8AADEA1DF9B85E00A2B931 /* Info.plist */,
 			);
 			path = SingleViewAppSwiftTemplateUITests;
+			sourceTree = "<group>";
+		};
+		F33E50012240E4160078DF0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A8AADC81DF9B85E00A2B931 /* AppDelegate.swift */,
+				3A8AADCA1DF9B85E00A2B931 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F33E50022240E4220078DF0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F33E50042240E4AB0078DF0E /* ParkArea.swift */,
+				F33E5014224113480078DF0E /* PassGenerator.swift */,
+				F33E50062240E65F0078DF0E /* RideAccess.swift */,
+				F33E50082240E9020078DF0E /* Discount.swift */,
+				F33E500E2240EB780078DF0E /* Pass.swift */,
+				F33E501622412B030078DF0E /* Person.swift */,
+				F33E500C2240EB4F0078DF0E /* Entrant.swift */,
+				F33E50102240ED950078DF0E /* Guest.swift */,
+				F33E50122240EF0C0078DF0E /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F33E50032240E4290078DF0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8AADCC1DF9B85E00A2B931 /* Main.storyboard */,
+				3A8AADCF1DF9B85E00A2B931 /* Assets.xcassets */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +311,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8AADCB1DF9B85E00A2B931 /* ViewController.swift in Sources */,
+				F33E5015224113480078DF0E /* PassGenerator.swift in Sources */,
+				F33E50072240E65F0078DF0E /* RideAccess.swift in Sources */,
+				F33E50112240ED950078DF0E /* Guest.swift in Sources */,
+				F33E50132240EF0C0078DF0E /* Employee.swift in Sources */,
 				3A8AADC91DF9B85E00A2B931 /* AppDelegate.swift in Sources */,
+				F33E501722412B030078DF0E /* Person.swift in Sources */,
+				F33E50092240E9020078DF0E /* Discount.swift in Sources */,
+				F33E500F2240EB780078DF0E /* Pass.swift in Sources */,
+				F33E500D2240EB4F0078DF0E /* Entrant.swift in Sources */,
+				F33E50052240E4AB0078DF0E /* ParkArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +563,7 @@
 				3A8AADEF1DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8AADF01DF9B85E00A2B931 /* Build configuration list for PBXNativeTarget "SingleViewAppSwiftTemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +572,7 @@
 				3A8AADF21DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8AADF31DF9B85E00A2B931 /* Build configuration list for PBXNativeTarget "SingleViewAppSwiftTemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +581,7 @@
 				3A8AADF51DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
