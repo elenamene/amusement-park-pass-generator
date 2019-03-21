@@ -8,24 +8,13 @@
 
 import Foundation
 
-
-//enum Pass {
-//    case classicGuest
-//    case VIPGuest
-//    case FreeChildGuest
-//    case hourlyEmployeeFoodServices // case hourlyEmployee(type: HourlyEmployeeType)
-//    case hourlyEmployeeRideServices
-//    case hourlyEmployeeMaintenance
-//    case manager
-//}
-
 struct Pass {
-    let passType: EntrantType
+    let passHolder: EntrantType
 }
 
 extension Pass {
     var areasPermitted: [ParkArea] {
-        switch self.passType {
+        switch self.passHolder {
         case .hourlyEmployeeFoodServices: return [.amusement, .kitchen]
         case .hourlyEmployeeRideServices: return [.amusement, .rideControl]
         case .hourlyEmployeeMaintenance: return [.amusement, .kitchen, .rideControl, .maintenance]
@@ -35,14 +24,14 @@ extension Pass {
     }
     
     var rideAccess: [RideAccess] {
-        switch self.passType {
+        switch self.passHolder {
         case .VIPGuest: return [.accessAllRides, .skipAllRidesLines]
         default: return [.accessAllRides]
         }
     }
     
     var discount: Discount {
-        switch self.passType {
+        switch self.passHolder {
         case .VIPGuest: return Discount(onFood: 10, onMerchandise: 20)
         case .hourlyEmployeeFoodServices, .hourlyEmployeeRideServices, .hourlyEmployeeMaintenance: return Discount(onFood: 15, onMerchandise: 25)
         case .manager: return Discount(onFood: 25, onMerchandise: 25)
@@ -53,6 +42,6 @@ extension Pass {
 
 extension Pass: CustomStringConvertible {
     var description: String {
-        return "Areas permitted: \(areasPermitted)\n Ride access: \(rideAccess)\n Discount: \(discount)"
+        return "Pass holder: \(passHolder)\n Areas permitted: \(areasPermitted)\n Ride access: \(rideAccess)\n Discount: \(discount)"
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
-enum RideAccess {
-    case accessAllRides
-    case skipAllRidesLines
+enum RideAccess: String {
+    case accessAllRides = "Access all rides"
+    case skipAllRidesLines = "Skip all rides lines"
 }

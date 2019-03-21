@@ -8,36 +8,50 @@
 
 enum EntrantType {
     case classicGuest
-    case VIPGuest
-    case FreeChildGuest
-    case hourlyEmployeeFoodServices // case hourlyEmployee(type: HourlyEmployeeType)
+    case vipGuest
+    case freeChildGuest
+    case hourlyEmployeeFoodServices // case employee(type: hourlyEmployee)
     case hourlyEmployeeRideServices
     case hourlyEmployeeMaintenance
-    case manager
+    case manager                    // case employee(type: manager)
 }
 
-protocol Entrant: class {
-    var accessPass: Pass? { get set }
+protocol Entrant {
     var entrantType: EntrantType { get }
 }
+
+// Entrant pass implementation
+
+extension Entrant {
+    var accessPass: Pass {
+        return Pass(passHolder: self.entrantType)
+    }
+}
+
+// Entrant swipe methods implementation
 
 enum AccessValidation: String {
     case pass = "Access Permitted"
     case fail = "Access Denied"
 }
 
-// Entrant swipe methods implementation
 extension Entrant {
-    func swipe(_ pass: Pass, in restrictedArea: ParkArea) -> AccessValidation {
-        
+    func swipePass(atRestrictedArea area: ParkArea) {
+        if accessPass.areasPermitted.contains(area) {
+            print(AccessValidation.pass.rawValue)
+        } else {
+            print(AccessValidation.fail.rawValue)
+        }
     }
     
-    func swipe(_ pass: Pass, in ride: ) -> RideAccess {
-        
+    func swipePass(at: Ride) {
+        for rideAccessPriviledge in accessPass.rideAccess {
+            print(rideAccessPriviledge.rawValue)
+        }
     }
     
-    func swipe(_ pass: Pass, in cashRegister: ) -> Discount {
-        
+    func swipePass(at: CashRegister) {
+        print(accessPass.discount)
     }
 }
 

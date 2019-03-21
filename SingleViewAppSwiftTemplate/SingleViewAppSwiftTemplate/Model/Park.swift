@@ -13,3 +13,9 @@ enum ParkArea {
     case maintenance
     case office
 }
+
+struct Ride {
+}
+
+struct CashRegister {
+}

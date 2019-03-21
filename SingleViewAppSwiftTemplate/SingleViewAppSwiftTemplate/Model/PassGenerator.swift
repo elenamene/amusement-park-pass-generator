@@ -6,78 +6,90 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
-// Data Errors
-enum EntrantError: Error {
-    case invalidFirstName
-    case invalidLastName
-    case invalidStreetAddress
-    case invalidCity
-    case invalidState
-    case invalidZipCode
-    case invalidDateOfBirth
-    case invalidSocialSecurityNumber
+import Foundation
+
+struct PassGenerator {
+    func getPass(for entrant: Entrant) {
+        // Validate data
+        do {
+            try dataValidation(for: entrant)
+        } catch let error as EntrantError {
+            print(error.rawValue)
+        } catch {
+            fatalError("Unexpected error: \(error).")
+        }
+        
+        // Generate new pass
+        print(entrant.accessPass)
+    }
 }
 
-// Check for correct data and assign a pass to the Entrant
-struct PassGenerator {
+extension PassGenerator {
+    // Helper methods
+    /// Check for correct data required for an Entrant passed as a paramenter.
     func dataValidation(for entrant: Entrant) throws {
         
-        if let nameableEntrant = entrant as? Nameable {
-            guard !nameableEntrant.firstName.isEmpty else {
-                throw EntrantError.invalidFirstName
-            }
-            guard !nameableEntrant.lastName.isEmpty else {
-                throw EntrantError.invalidLastName
-            }
+        if let entrant = entrant as? Nameable {
+            try validateName(for: entrant)
         }
         
-        if let addressableEntrant = entrant as? Addressable {
-            guard !addressableEntrant.city.isEmpty else {
-                throw EntrantError.invalidCity
-            }
-            guard !addressableEntrant.state.isEmpty else {
-                throw EntrantError.invalidState
-            }
-            guard !addressableEntrant.streetAddress.isEmpty else {
-                throw EntrantError.invalidStreetAddress
-            }
-            guard !addressableEntrant.zipCode.isEmpty else {
-                throw EntrantError.invalidZipCode
-            }
+        if let entrant = entrant as? Addressable {
+            try validateAddress(for: entrant)
         }
         
-        if let employeeEntrant = entrant as? Employee {
-            guard !employeeEntrant.socialSecurityNumber.isEmpty else {
-                throw EntrantError.invalidSocialSecurityNumber
-            }
+        if let entrant = entrant as? Employable {
+            try validateSocialSecurityNumber(for: entrant)
         }
         
-        if let ageableEntrant = entrant as? Ageable {
-            guard !ageableEntrant.dateOfBirth.isEmpty else {
-                throw EntrantError.invalidDateOfBirth
-            }
-            // Check id free child guest
-            // Free Child Guest must be under 5 years old
+        if let entrant = entrant as? Ageable {
+            try validateDateOfBirth(for: entrant)
         }
         
     }
     
-    func generatePass(for entrant: Entrant) -> Pass {
-        // Validate data
-        do {
-            try dataValidation(for: entrant)
-        } catch let error {
-            print(error)
+    func validateName(for entrant: Nameable) throws {
+        guard !entrant.firstName.isEmpty else {
+            throw EntrantError.invalidFirstName
         }
-        
-        // Generate new pass
-        let newPass = Pass(passType: entrant.entrantType)
-        
-        // Assign pass to entrant
-        entrant.accessPass = newPass
-        
-        // Print Pass
-        print(newPass)
+        guard !entrant.lastName.isEmpty else {
+            throw EntrantError.invalidLastName
+        }
+    }
+    
+    func validateAddress(for entrant: Addressable) throws {
+        guard !entrant.address.city.isEmpty else {
+            throw EntrantError.invalidCity
+        }
+        guard !entrant.address.state.isEmpty else {
+            throw EntrantError.invalidState
+        }
+        guard !entrant.address.streetAddress.isEmpty else {
+            throw EntrantError.invalidStreetAddress
+        }
+        guard !entrant.address.zipCode.isEmpty else {
+            throw EntrantError.invalidZipCode
+        }
+    }
+    
+    func validateSocialSecurityNumber(for entrant: Employable) throws {
+        guard !entrant.socialSecurityNumber.isEmpty else {
+            throw EntrantError.invalidSocialSecurityNumber
+        }
+    }
+    
+    func validateDateOfBirth(for entrant: Ageable) throws {
+        guard entrant.dateOfBirth != nil else {
+            throw EntrantError.invalidDateOfBirth
+        }
+    }
+}
+
+// Date extension to calculate age
+
+extension Date {
+    func age() -> Int {
+        let now = Date()
+        return Calendar.current.dateComponents([.year], from: self, to: now).year!
     }
 }
 
@@ -86,3 +98,7 @@ struct PassGenerator {
 //    func employeeValidation() {}
 //    func guestValidation() {}
 //}
+
+
+
+

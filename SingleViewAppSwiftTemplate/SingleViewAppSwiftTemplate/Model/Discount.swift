@@ -23,3 +23,5 @@ extension Discount: CustomStringConvertible {
         return "\(food) Discount on food, \(merchandise) discount on merchandise"
     }
 }
+
+

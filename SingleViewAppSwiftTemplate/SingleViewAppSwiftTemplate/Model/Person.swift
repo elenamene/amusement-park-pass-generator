@@ -6,19 +6,27 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
+import Foundation
+
+struct Address {
+    var streetAddress: String
+    var city: String
+    var state: String
+    var zipCode: String
+}
+
+// Protocols for personal info requested
+
 protocol Nameable {
     var firstName: String { get }
     var lastName: String { get }
 }
 
 protocol Addressable {
-    var streetAddress: String { get }
-    var city: String { get }
-    var state: String { get }
-    var zipCode: String { get }
+    var address: Address { get }
 }
 
 protocol Ageable {
-    var dateOfBirth: String { get }
+    var dateOfBirth: Date? { get }
 }
 
