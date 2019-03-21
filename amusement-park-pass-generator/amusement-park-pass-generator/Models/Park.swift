@@ -6,12 +6,12 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
-enum ParkArea {
-    case amusement
-    case kitchen
-    case rideControl
-    case maintenance
-    case office
+enum ParkArea: String {
+    case amusement = "Amusement Areas"
+    case kitchen = "Kitchen Areas"
+    case rideControl = "Ride Control Areas"
+    case maintenance = "Maintenance Areas"
+    case office = "Office Areas"
 }
 
 struct Ride {

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F323C3712243B611004CFBBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F323C3702243B611004CFBBA /* Main.storyboard */; };
+		F323C3732243B621004CFBBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F323C3722243B621004CFBBA /* LaunchScreen.storyboard */; };
 		F3E0DD902243AE4400665DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DD8F2243AE4400665DBF /* AppDelegate.swift */; };
 		F3E0DD922243AE4400665DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DD912243AE4400665DBF /* ViewController.swift */; };
-		F3E0DD952243AE4400665DBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E0DD932243AE4400665DBF /* Main.storyboard */; };
 		F3E0DD972243AE4500665DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E0DD962243AE4500665DBF /* Assets.xcassets */; };
-		F3E0DD9A2243AE4500665DBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E0DD982243AE4500665DBF /* LaunchScreen.storyboard */; };
 		F3E0DDA52243AE4500665DBF /* amusement_park_pass_generatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDA42243AE4500665DBF /* amusement_park_pass_generatorTests.swift */; };
 		F3E0DDB02243AE4500665DBF /* amusement_park_pass_generatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDAF2243AE4500665DBF /* amusement_park_pass_generatorUITests.swift */; };
 		F3E0DDCB2243AFA900665DBF /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC02243AFA800665DBF /* Discount.swift */; };
@@ -44,12 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F323C3702243B611004CFBBA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F323C3722243B621004CFBBA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3E0DD8C2243AE4400665DBF /* amusement-park-pass-generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amusement-park-pass-generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E0DD8F2243AE4400665DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E0DD912243AE4400665DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F3E0DD942243AE4400665DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3E0DD962243AE4500665DBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F3E0DD992243AE4500665DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3E0DD9B2243AE4500665DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E0DDA02243AE4500665DBF /* amusement-park-pass-generatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amusement-park-pass-generatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E0DDA42243AE4500665DBF /* amusement_park_pass_generatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amusement_park_pass_generatorTests.swift; sourceTree = "<group>"; };
@@ -163,9 +163,9 @@
 		F3E0DDBE2243AE7800665DBF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F3E0DD932243AE4400665DBF /* Main.storyboard */,
 				F3E0DD962243AE4500665DBF /* Assets.xcassets */,
-				F3E0DD982243AE4500665DBF /* LaunchScreen.storyboard */,
+				F323C3702243B611004CFBBA /* Main.storyboard */,
+				F323C3722243B621004CFBBA /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E0DD9A2243AE4500665DBF /* LaunchScreen.storyboard in Resources */,
+				F323C3732243B621004CFBBA /* LaunchScreen.storyboard in Resources */,
+				F323C3712243B611004CFBBA /* Main.storyboard in Resources */,
 				F3E0DD972243AE4500665DBF /* Assets.xcassets in Resources */,
-				F3E0DD952243AE4400665DBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,25 +355,6 @@
 			targetProxy = F3E0DDAC2243AE4500665DBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F3E0DD932243AE4400665DBF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3E0DD942243AE4400665DBF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F3E0DD982243AE4500665DBF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3E0DD992243AE4500665DBF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F3E0DDB22243AE4500665DBF /* Debug */ = {

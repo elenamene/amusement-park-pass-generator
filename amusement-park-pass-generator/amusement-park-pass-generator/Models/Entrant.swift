@@ -6,14 +6,14 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
-enum EntrantType {
-    case classicGuest
-    case vipGuest
-    case freeChildGuest
-    case hourlyEmployeeFoodServices // case employee(type: hourlyEmployee)
-    case hourlyEmployeeRideServices
-    case hourlyEmployeeMaintenance
-    case manager                    // case employee(type: manager)
+enum EntrantType: String {
+    case classicGuest = "Classic Guest"
+    case vipGuest = "VIP Guest"
+    case freeChildGuest = "Free Child Guest"
+    case hourlyEmployeeFoodServices = "Hourly Employee - Food Services"
+    case hourlyEmployeeRideServices = "Hourly Employee - Ride Services"
+    case hourlyEmployeeMaintenance = "Hourly Employee - Maintenance"
+    case manager = "Manager"
 }
 
 protocol Entrant {

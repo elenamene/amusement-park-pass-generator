@@ -42,6 +42,8 @@ extension Pass {
 
 extension Pass: CustomStringConvertible {
     var description: String {
-        return "Pass holder: \(passHolder)\n Areas permitted: \(areasPermitted)\n Ride access: \(rideAccess)\n Discount: \(discount)"
+        let areasPermittedString = areasPermitted.map { $0.rawValue }
+        let rideAccessString = rideAccess.map { $0.rawValue }
+        return "******************************************************\nPass holder: \(passHolder.rawValue)\nAreas permitted: \(areasPermittedString)\nRide access: \(rideAccessString)\nDiscount: \(discount)\n******************************************************"
     }
 }

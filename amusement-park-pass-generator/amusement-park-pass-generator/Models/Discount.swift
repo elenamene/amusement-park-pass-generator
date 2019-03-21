@@ -20,7 +20,7 @@ struct Discount {
 
 extension Discount: CustomStringConvertible {
     var description: String {
-        return "\(food) Discount on food, \(merchandise) discount on merchandise"
+        return "\(food)% on food, \(merchandise)% on merchandise"
     }
 }
 
