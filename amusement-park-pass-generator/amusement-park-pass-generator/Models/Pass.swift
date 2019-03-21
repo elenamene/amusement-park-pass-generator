@@ -25,14 +25,14 @@ extension Pass {
     
     var rideAccess: [RideAccess] {
         switch self.passHolder {
-        case .VIPGuest: return [.accessAllRides, .skipAllRidesLines]
+        case .vipGuest: return [.accessAllRides, .skipAllRidesLines]
         default: return [.accessAllRides]
         }
     }
     
     var discount: Discount {
         switch self.passHolder {
-        case .VIPGuest: return Discount(onFood: 10, onMerchandise: 20)
+        case .vipGuest: return Discount(onFood: 10, onMerchandise: 20)
         case .hourlyEmployeeFoodServices, .hourlyEmployeeRideServices, .hourlyEmployeeMaintenance: return Discount(onFood: 15, onMerchandise: 25)
         case .manager: return Discount(onFood: 25, onMerchandise: 25)
         default: return Discount(onFood: 0, onMerchandise: 0)
