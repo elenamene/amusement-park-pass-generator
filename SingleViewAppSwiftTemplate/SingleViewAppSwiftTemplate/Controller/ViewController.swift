@@ -15,11 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let newGuest = FreeChildGuest(dateOfBirth: Date())
-        if let newGuest = newGuest {
-            passGenerator.getPass(for: newGuest)
-        }
     }
 
     override func didReceiveMemoryWarning() {
