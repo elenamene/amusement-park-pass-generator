@@ -9,12 +9,16 @@
 import Foundation
 
 struct Pass {
-    let passHolder: EntrantType
+    let passHolder: Entrant
+    
+    init(for entrant: Entrant) {
+        self.passHolder = entrant
+    }
 }
 
 extension Pass {
     var areasPermitted: [ParkArea] {
-        switch self.passHolder {
+        switch self.passHolder.entrantType {
         case .hourlyEmployeeFoodServices: return [.amusement, .kitchen]
         case .hourlyEmployeeRideServices: return [.amusement, .rideControl]
         case .hourlyEmployeeMaintenance: return [.amusement, .kitchen, .rideControl, .maintenance]
@@ -24,18 +28,19 @@ extension Pass {
     }
     
     var rideAccess: [RideAccess] {
-        switch self.passHolder {
+        switch self.passHolder.entrantType {
         case .vipGuest: return [.accessAllRides, .skipAllRidesLines]
         default: return [.accessAllRides]
         }
     }
     
-    var discount: Discount {
-        switch self.passHolder {
+    var discount: Discount? {
+        switch self.passHolder.entrantType {
         case .vipGuest: return Discount(onFood: 10, onMerchandise: 20)
-        case .hourlyEmployeeFoodServices, .hourlyEmployeeRideServices, .hourlyEmployeeMaintenance: return Discount(onFood: 15, onMerchandise: 25)
+        case .hourlyEmployeeFoodServices, .hourlyEmployeeRideServices, .hourlyEmployeeMaintenance:
+            return Discount(onFood: 15, onMerchandise: 25)
         case .manager: return Discount(onFood: 25, onMerchandise: 25)
-        default: return Discount(onFood: 0, onMerchandise: 0)
+        default: return nil
         }
     }
 }
@@ -44,6 +49,15 @@ extension Pass: CustomStringConvertible {
     var description: String {
         let areasPermittedString = areasPermitted.map { $0.rawValue }
         let rideAccessString = rideAccess.map { $0.rawValue }
-        return "******************************************************\nPass holder: \(passHolder.rawValue)\nAreas permitted: \(areasPermittedString)\nRide access: \(rideAccessString)\nDiscount: \(discount)\n******************************************************"
+        
+        var discountDescription: String {
+            if let discount = self.discount {
+                return discount.description
+            } else {
+                return "No Discunt Available"
+            }
+        }
+       
+        return "******************************************************\nPass holder: \(passHolder.entrantType.rawValue)\nAreas permitted: \(areasPermittedString)\nRide access: \(rideAccessString)\nDiscount: \(discountDescription)))\n******************************************************"
     }
 }

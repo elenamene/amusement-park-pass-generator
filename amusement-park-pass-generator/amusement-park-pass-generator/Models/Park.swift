@@ -13,9 +13,3 @@ enum ParkArea: String {
     case maintenance = "Maintenance Areas"
     case office = "Office Areas"
 }
-
-struct Ride {
-}
-
-struct CashRegister {
-}

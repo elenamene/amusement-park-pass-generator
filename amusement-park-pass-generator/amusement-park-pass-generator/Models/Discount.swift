@@ -24,4 +24,12 @@ extension Discount: CustomStringConvertible {
     }
 }
 
+extension Discount: Equatable {
+    static func == (lhs: Discount, rhs: Discount) -> Bool {
+        return
+            lhs.food == rhs.food &&
+            lhs.merchandise == rhs.merchandise
+    }
+}
+
 

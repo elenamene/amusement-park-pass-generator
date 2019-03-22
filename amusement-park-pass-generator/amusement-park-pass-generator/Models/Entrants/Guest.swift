@@ -34,24 +34,22 @@ extension Guest {
 
 // MARK: - Structs Guest
 
-struct ClassicGuest: Guest {
+class ClassicGuest: Guest {
     var type: GuestType = .classic
+    var accessPass: Pass?
 }
 
-struct VIPGuest: Guest {
+class VIPGuest: Guest {
     var type: GuestType = .vip
+    var accessPass: Pass?
 }
 
-struct FreeChildGuest: Guest, Ageable {
+class FreeChildGuest: Guest, Ageable {
     var type: GuestType = .freeChild
     var dateOfBirth: Date?
+    var accessPass: Pass?
     
-    init?(dateOfBirth: Date) {
-        guard dateOfBirth.age() >= 5 else {
-            print(EntrantError.invalidAge.rawValue)
-            return
-        }
-        
+    init(dateOfBirth: Date) {
         self.dateOfBirth = dateOfBirth
     }
 }

@@ -17,4 +17,3 @@ enum EntrantError: String, Error {
     case invalidSocialSecurityNumber = "Please insert your Social Security Number."
     case invalidAge = "Free child guest must be under 5 years old. Please select Classic Guest."
 }
-

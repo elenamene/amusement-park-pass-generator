@@ -8,18 +8,20 @@
 
 import Foundation
 
-protocol Employable: Nameable, Addressable, Ageable {
-    var socialSecurityNumber: String { get }
+// MARK: - Employable
+
+protocol Employable: Nameable, Addressable, Ageable,SSNIdentifiable {
 }
 
 // MARK: - HourlyEmployeeType
 
-struct HourlyEmployee: Employable {
+class HourlyEmployee: Employable {
     var firstName: String
     var lastName: String
     var address: Address
     var dateOfBirth: Date?
     var socialSecurityNumber: String
+    var accessPass: Pass?
     
     enum Service {
         case foodServices
@@ -28,6 +30,15 @@ struct HourlyEmployee: Employable {
     }
     
     var service: Service
+    
+    init(firstName: String, lastName: String, address: Address, dateOfBirth: Date, socialSecurityNumber: String, service: Service) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.address = address
+        self.dateOfBirth = dateOfBirth
+        self.socialSecurityNumber = socialSecurityNumber
+        self.service = service
+    }
 }
 
 extension HourlyEmployee: Entrant {
@@ -42,7 +53,7 @@ extension HourlyEmployee: Entrant {
 
 // MARK: - Manager
 
-struct Manager: Employable {
+class Manager: Employable {
     var firstName: String
     var lastName: String
     var address: Address
@@ -56,6 +67,16 @@ struct Manager: Employable {
     }
     
     var tier: ManagerTier
+    var accessPass: Pass?
+    
+    init(firstName: String, lastName: String, address: Address, dateOfBirth: Date, socialSecurityNumber: String, tier: ManagerTier) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.address = address
+        self.dateOfBirth = dateOfBirth
+        self.socialSecurityNumber = socialSecurityNumber
+        self.tier = tier
+    }
 }
 
 extension Manager: Entrant {
