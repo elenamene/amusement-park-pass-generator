@@ -259,7 +259,7 @@ class amusement_park_pass_generatorTests: XCTestCase {
         passBooth.assignPass(to: employee)
         
         XCTAssertTrue(employee.isTodayBirthday())
-        employee.swipePassAtRide() // Should print Happy Birthday message
+        _ = employee.swipePassAtRide() // Should print Happy Birthday message
     }
     
      // MARK: - Failing tests
