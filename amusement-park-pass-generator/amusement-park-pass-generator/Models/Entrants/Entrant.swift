@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Entrant
+
 enum EntrantType: String {
     case classicGuest = "Classic Guest"
     case vipGuest = "VIP Guest"
@@ -51,7 +53,7 @@ extension Entrant {
     }
 }
 
-// MARK: -  Entrant swipe methods implementation
+// MARK: - Entrant Swipe Methods
 
 enum AccessValidation: String {
     case pass = "Access Permitted"
@@ -65,7 +67,6 @@ extension Entrant {
         if let entrant = self as? Ageable, entrant.isTodayBirthday() {
             print(Message.happyBirthday(entrant).text)
         }
-        
         
         // Check for access permission
         if let pass = self.accessPass, pass.areasPermitted.contains(area) {

@@ -23,7 +23,7 @@
 		F3E0DDCE2243AFA900665DBF /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC32243AFA800665DBF /* Guest.swift */; };
 		F3E0DDCF2243AFA900665DBF /* EntrantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC42243AFA800665DBF /* EntrantError.swift */; };
 		F3E0DDD02243AFA900665DBF /* ParkArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC52243AFA800665DBF /* ParkArea.swift */; };
-		F3E0DDD12243AFA900665DBF /* EntrantsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC62243AFA800665DBF /* EntrantsProtocols.swift */; };
+		F3E0DDD12243AFA900665DBF /* PersonalnformationsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC62243AFA800665DBF /* PersonalnformationsProtocols.swift */; };
 		F3E0DDD22243AFA900665DBF /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC72243AFA800665DBF /* Pass.swift */; };
 		F3E0DDD42243AFA900665DBF /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDC92243AFA800665DBF /* Entrant.swift */; };
 		F3E0DDD52243AFA900665DBF /* PassBooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0DDCA2243AFA800665DBF /* PassBooth.swift */; };
@@ -69,7 +69,7 @@
 		F3E0DDC32243AFA800665DBF /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		F3E0DDC42243AFA800665DBF /* EntrantError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrantError.swift; sourceTree = "<group>"; };
 		F3E0DDC52243AFA800665DBF /* ParkArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkArea.swift; sourceTree = "<group>"; };
-		F3E0DDC62243AFA800665DBF /* EntrantsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrantsProtocols.swift; sourceTree = "<group>"; };
+		F3E0DDC62243AFA800665DBF /* PersonalnformationsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalnformationsProtocols.swift; sourceTree = "<group>"; };
 		F3E0DDC72243AFA800665DBF /* Pass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
 		F3E0DDC92243AFA800665DBF /* Entrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
 		F3E0DDCA2243AFA800665DBF /* PassBooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassBooth.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		F369A3A62244EE0A004413F9 /* Entrants */ = {
 			isa = PBXGroup;
 			children = (
-				F3E0DDC62243AFA800665DBF /* EntrantsProtocols.swift */,
+				F3E0DDC62243AFA800665DBF /* PersonalnformationsProtocols.swift */,
 				F3E0DDC42243AFA800665DBF /* EntrantError.swift */,
 				F3E0DDC92243AFA800665DBF /* Entrant.swift */,
 				F3E0DDC12243AFA800665DBF /* Employee.swift */,
@@ -336,7 +336,7 @@
 				F369A3A8224654E8004413F9 /* SwipeController.swift in Sources */,
 				F3E0DDCC2243AFA900665DBF /* Employee.swift in Sources */,
 				F3E0DDCF2243AFA900665DBF /* EntrantError.swift in Sources */,
-				F3E0DDD12243AFA900665DBF /* EntrantsProtocols.swift in Sources */,
+				F3E0DDD12243AFA900665DBF /* PersonalnformationsProtocols.swift in Sources */,
 				F3E0DD902243AE4400665DBF /* AppDelegate.swift in Sources */,
 				F3E0DDD22243AFA900665DBF /* Pass.swift in Sources */,
 				F32718F42247BD27002FFE77 /* Message.swift in Sources */,

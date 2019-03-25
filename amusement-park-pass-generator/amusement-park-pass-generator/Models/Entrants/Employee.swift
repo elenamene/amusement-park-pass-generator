@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Employable
+// MARK: - Employee
 
 protocol Employee: Nameable, Addressable, Ageable,SSNIdentifiable, Entrant {
 }

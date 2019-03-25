@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Message
+
 enum Message {
     case happyBirthday(Ageable)
     case doubleSwiping(Entrant)
@@ -16,8 +18,8 @@ enum Message {
         switch self {
         case .happyBirthday(let entrant) where entrant is Employee: return employeeBirthdayMessage(entrant: entrant as! Employee)
         case .happyBirthday(let entrant) where entrant is Guest: return guestBirthdayMessage()
-        case .doubleSwiping(let entrant): return doubleSwipingMessage(entrant: entrant)
         case .happyBirthday(_): return "Happy birthday!!!"
+        case .doubleSwiping(let entrant): return doubleSwipingMessage(entrant: entrant)
         }
     }
 }
