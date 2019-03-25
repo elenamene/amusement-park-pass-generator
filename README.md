@@ -1,6 +1,6 @@
 # Amusement Park Pass Generator
 
-## iOS Techdegree Project 1
+## iOS Techdegree Project 4
 
 For this project, you’ll create a system for creating and validating access passes to an amusement park.
 There are three types of people who can be granted access to the park: employees, vendors, and of course, guests.
