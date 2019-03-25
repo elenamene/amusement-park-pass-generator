@@ -8,13 +8,6 @@
 
 import Foundation
 
-struct Address {
-    var streetAddress: String
-    var city: String
-    var state: String
-    var zipCode: String
-}
-
 // MARK: - Nameable
 
 protocol Nameable {
@@ -34,6 +27,13 @@ extension Nameable {
 }
 
 // MARK: - Addressable
+
+struct Address {
+    var streetAddress: String
+    var city: String
+    var state: String
+    var zipCode: String
+}
 
 protocol Addressable {
     var address: Address { get }
@@ -69,14 +69,21 @@ extension Ageable {
         }
         
         if let entrant = self as? FreeChildGuest, let dateOfBirth = entrant.dateOfBirth {
-            let age = dateOfBirth.age()
-            print("Age of the child: \(age)")
+            let age = dateOfBirth.age
             
             guard age < 5 else {
                 throw EntrantError.invalidAge
             }
         }
         
+    }
+    
+    func isTodayBirthday() -> Bool {
+        if let dateOfBirth = self.dateOfBirth, dateOfBirth.isSameDayAndMonthOfToday() {
+            return true
+        } else {
+            return false
+        }
     }
 }
 

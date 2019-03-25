@@ -10,12 +10,12 @@ import Foundation
 
 // MARK: - Employable
 
-protocol Employable: Nameable, Addressable, Ageable,SSNIdentifiable {
+protocol Employee: Nameable, Addressable, Ageable,SSNIdentifiable, Entrant {
 }
 
 // MARK: - HourlyEmployeeType
 
-class HourlyEmployee: Employable {
+class HourlyEmployee: Employee {
     var firstName: String
     var lastName: String
     var address: Address
@@ -53,12 +53,13 @@ extension HourlyEmployee: Entrant {
 
 // MARK: - Manager
 
-class Manager: Employable {
+class Manager: Employee {
     var firstName: String
     var lastName: String
     var address: Address
     var dateOfBirth: Date?
     var socialSecurityNumber: String
+    var accessPass: Pass?
     
     enum ManagerTier {
         case shiftManager
@@ -67,7 +68,6 @@ class Manager: Employable {
     }
     
     var tier: ManagerTier
-    var accessPass: Pass?
     
     init(firstName: String, lastName: String, address: Address, dateOfBirth: Date, socialSecurityNumber: String, tier: ManagerTier) {
         self.firstName = firstName

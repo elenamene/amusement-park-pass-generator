@@ -20,7 +20,11 @@ struct Discount {
 
 extension Discount: CustomStringConvertible {
     var description: String {
-        return "\(food)% on food, \(merchandise)% on merchandise"
+        if food == 0 && merchandise == 0 {
+            return "No Discunt Available"
+        } else {
+            return "\(food)% on food, \(merchandise)% on merchandise"
+        }
     }
 }
 

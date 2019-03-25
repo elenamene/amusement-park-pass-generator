@@ -6,6 +6,8 @@
 //  Copyright © 2019 Treehouse. All rights reserved.
 //
 
+import Foundation
+
 enum EntrantType: String {
     case classicGuest = "Classic Guest"
     case vipGuest = "VIP Guest"
@@ -58,6 +60,14 @@ enum AccessValidation: String {
 
 extension Entrant {
     func swipePass(atRestrictedArea area: ParkArea) -> AccessValidation {
+        
+        // Check for birthday
+        if let entrant = self as? Ageable, entrant.isTodayBirthday() {
+            print(Message.happyBirthday(entrant).text)
+        }
+        
+        
+        // Check for access permission
         if let pass = self.accessPass, pass.areasPermitted.contains(area) {
             print(AccessValidation.pass.rawValue)
             return AccessValidation.pass
@@ -70,22 +80,31 @@ extension Entrant {
     func swipePassAtRide() -> [RideAccess]? {
         guard let pass = self.accessPass else { return nil }
         
-        let ridePriviledges = pass.rideAccess.map { $0.rawValue }
-        print("Ride access: \(ridePriviledges)")
+        // Check for birthday
+        if let entrant = self as? Ageable, entrant.isTodayBirthday() {
+            print(Message.happyBirthday(entrant).text)
+        }
+        
+        // Check for double swiping
+        if SwipeController.hasEntrantSwipedDouble(entrant: self) {
+            print(Message.doubleSwiping(self).text)
+            return nil
+        }
+        
+        print("Ride access: \(pass.rideAccess.map { $0.rawValue })")
         
         return pass.rideAccess
     }
     
-    func swipePassAtCashRegister() -> Discount? {
-        guard let pass = self.accessPass else { return nil }
+    func swipePassAtCashRegister() {
+        guard let pass = self.accessPass else { return }
         
-        if let discount = pass.discount {
-            print("Discount: \(discount)")
-        } else {
-            print("No Discunt Available")
+        // Check for birthday
+        if let entrant = self as? Ageable, entrant.isTodayBirthday() {
+            print(Message.happyBirthday(entrant).text)
         }
-
-       return pass.discount
+        
+        print(pass.discount.description)
     }
 }
 
