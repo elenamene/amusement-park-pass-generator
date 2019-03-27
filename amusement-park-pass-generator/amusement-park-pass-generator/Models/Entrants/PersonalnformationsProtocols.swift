@@ -68,10 +68,8 @@ extension Ageable {
             throw EntrantError.invalidDateOfBirth
         }
         
-        if let entrant = self as? FreeChildGuest, let dateOfBirth = entrant.dateOfBirth {
-            let age = dateOfBirth.age
-            
-            guard age < 5 else {
+        if let entrant = self as? FreeChildGuest, let dateOfBirth = entrant.dateOfBirth, let age = dateOfBirth.age {
+            if age >= 5 {
                 throw EntrantError.invalidAge
             }
         }

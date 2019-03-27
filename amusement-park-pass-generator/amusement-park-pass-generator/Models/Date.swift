@@ -11,27 +11,22 @@ import Foundation
 // Date extension to calculate age
 
 extension Date {
-    var age: Int {
+    var age: Int? {
         let now = Date()
-        return Calendar.current.dateComponents([.year], from: self, to: now).year!
+        return Calendar.current.dateComponents([.year], from: self, to: now).year
     }
     
-    var month: Int {
-        return Calendar.current.dateComponents([.month], from: self).month!
+    var month: Int? {
+        return Calendar.current.dateComponents([.month], from: self).month
     }
     
-    var day: Int {
-        return Calendar.current.dateComponents([.day], from: self).day!
+    var day: Int? {
+        return Calendar.current.dateComponents([.day], from: self).day
     }
     
     func isSameDayAndMonthOfToday() -> Bool {
         let today = Date()
-        
-        if self.day == today.day && self.month == today.month {
-            return true
-        } else {
-            return false
-        }
+        return self.day == today.day && self.month == today.month
     }
 }
 
