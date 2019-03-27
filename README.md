@@ -1,4 +1,4 @@
-# Amusement Park Pass Generator
+# Amusement Park Pass Generator (part 1)
 
 ## iOS Techdegree Project 4
 
